@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 
 export default function MainNavigator() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -25,7 +25,7 @@ export default function MainNavigator() {
         component={EventsScreen}
         option={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="Event" color={color} size={size} />
+            <MaterialIcons name="Events" color={color} size={size} />
           ),
         }}
       />

@@ -1,10 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
+import { Surface, Switch, Text } from "react-native-paper";
 
 export default function EventsScreen() {
   return (
-    <View>
-      <Text>EventsScreen</Text>
-    </View>
+    <Surface style={{ flex: 1, padding: 20, margin: 20 }}>
+      <Text>Events Screen</Text>
+    </Surface>
   );
 }
