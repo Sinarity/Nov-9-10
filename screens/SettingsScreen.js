@@ -1,15 +1,10 @@
-import { View } from "react-native";
 import React from "react";
 import { RadioButton, Surface, Switch, Text } from "react-native-paper";
 import { useAppStore } from "../store/UseAppStore";
 
 export default function SettingsScreen() {
-  // const { isDarkTheme, isSoundEnabled, fontSizeKey } = useAppStore();
-  // const [fontSize, setFontSize] = React.useState(fontSizeKey);
-
   const isDarkTheme = useAppStore((state) => state.isDarkTheme);
   const fontSizeKey = useAppStore((state) => state.fontSizeKey);
-  const isOffline = useAppStore((state) => state.isOffline);
   const isSoundEnabled = useAppStore((state) => state.isSoundEnabled);
 
   const toggleTheme = useAppStore((state) => state.toggleTheme);
@@ -20,7 +15,7 @@ export default function SettingsScreen() {
     <Surface style={{ flex: 1, padding: 20, margin: 20 }}>
       <Surface
         style={{
-          flexdirection: "row",
+          flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
           padding: 16,
@@ -36,7 +31,7 @@ export default function SettingsScreen() {
       <Surface
         style={{
           elevation: 2,
-          flexdirection: "row",
+          flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
           padding: 16,
@@ -52,7 +47,7 @@ export default function SettingsScreen() {
       <Surface
         style={{
           elevation: 2,
-          flexdirection: "row",
+          flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
           padding: 16,
@@ -61,7 +56,7 @@ export default function SettingsScreen() {
         }}
       >
         <Text style={{ padding: 16, borderRadius: 12 }}>
-          Font Size {fontSize}
+          Font Size {fontSizeKey}
         </Text>
         <RadioButton.Group
           onValueChange={(fontSizeKey) => setFontSize(fontSizeKey)}
