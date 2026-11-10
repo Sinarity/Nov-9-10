@@ -11,6 +11,9 @@ export default function SettingsScreen() {
   const toggleSound = useAppStore((state) => state.toggleSound);
   const setFontSize = useAppStore((state) => state.setFontSize);
 
+  const fontSizes = { small: 14, medium: 18, large: 24 };
+  const fontSize = fontSizes[fontSizeKey];
+
   return (
     <Surface style={{ flex: 1, padding: 20, margin: 20 }}>
       <Surface
@@ -47,20 +50,16 @@ export default function SettingsScreen() {
       <Surface
         style={{
           elevation: 2,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
           padding: 16,
           borderRadius: 12,
-          marginBottom: 16,
         }}
       >
-        <Text style={{ padding: 16, borderRadius: 12 }}>
-          Font Size {fontSizeKey}
+        <Text style={{ marginButton: 8, fontWeight: "bold", fontSize }}>
+          Font Size: {fontSizeKey}
         </Text>
         <RadioButton.Group
-          onValueChange={(fontSizeKey) => setFontSize(fontSizeKey)}
-          value={fontSizeKey}
+          onValueChange={(newValue) => setFontSize(newValue)}
+          value={fontSize}
         >
           <RadioButton.Item value="small" label="Small" />
           <RadioButton.Item value="medium" label="Medium" />
