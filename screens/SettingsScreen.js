@@ -55,12 +55,12 @@ export default function SettingsScreen() {
           borderRadius: 12,
         }}
       >
-        <Text style={{ marginButton: 8, fontWeight: "bold", fontSize }}>
+        <Text style={{ marginBottom: 8, fontWeight: "bold" }}>
           Font Size: {fontSizeKey}
         </Text>
         <RadioButton.Group
           onValueChange={(newValue) => setFontSize(newValue)}
-          value={fontSize}
+          value={fontSizeKey}
         >
           <RadioButton.Item value="small" label="Small" />
           <RadioButton.Item value="medium" label="Medium" />

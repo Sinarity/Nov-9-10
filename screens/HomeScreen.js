@@ -8,7 +8,9 @@ export default function HomeScreen() {
 
   return (
     <Surface style={{ flex: 1, padding: 20, margin: 20 }}>
-      <Text>HomeScreen {isDarkTheme ? "Enabled" : "Disabled"}</Text>
+      <Text>
+        HomeScreen {fontSizeKey} {isDarkTheme ? "Enabled" : "Disabled"}
+      </Text>
     </Surface>
   );
 }
