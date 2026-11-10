@@ -2,6 +2,7 @@ import { ScrollView, View } from "react-native";
 import React from "react";
 import { Surface, Switch, Text } from "react-native-paper";
 import { useAppStore } from "../store/UseAppStore";
+import { useEffect } from "react";
 
 export default function EventsScreen() {
   const events = useAppStore((state) => state.events);

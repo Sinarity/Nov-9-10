@@ -21,23 +21,22 @@ export const useAppStore = create((set, get) => ({
   eventsError: null,
   lastFetchTimeStamp: null,
 
-  fetchEvents: () => {
+  fetchEvents: async (apiKey) => {
     try {
-      const response = fetch(
+      const response = await fetch(
         "https://elevate-horizon-connect-api.onrender.com/api/events",
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
             "x-api-key": apiKey,
-
           },
         },
       );
       if (!response.ok) {
         throw new Error(`Server responded with status ${response.status}`);
       }
-      const eventsArray = response.json();
+      const eventsArray = await response.json();
       set({
         events: eventsArray,
         isLoadingEvents: false,
@@ -45,9 +44,8 @@ export const useAppStore = create((set, get) => ({
         eventsError: null,
         lastFetchTimeStamp: Date.now(),
       });
-    } catch (error) {}
-    console.log(error.message);
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 }));
-
-
