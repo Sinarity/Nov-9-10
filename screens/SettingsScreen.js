@@ -11,8 +11,9 @@ export default function SettingsScreen() {
   const toggleSound = useAppStore((state) => state.toggleSound);
   const setFontSize = useAppStore((state) => state.setFontSize);
 
-  const fontSizes = { small: 14, medium: 18, large: 24 };
-  const fontSize = fontSizes[fontSizeKey];
+  // localized font sizing (only works on this page though)
+  // const fontSizes = { small: 14, medium: 18, large: 24 };
+  // const fontSize = fontSizes[fontSizeKey];
 
   return (
     <Surface style={{ flex: 1, padding: 20, margin: 20 }}>
